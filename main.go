@@ -14,6 +14,7 @@ import (
 
 var bindAddress = env.String("BIND_ADDRESS", false, ":9090", "Bind address for the server")
 
+// api rest built using only go standard library
 func main() {
 	env.Parse()
 
