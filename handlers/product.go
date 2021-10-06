@@ -3,6 +3,7 @@ package handlers
 import (
 	"building-microservices-with-go/data"
 	"context"
+	"fmt"
 	"log"
 	"net/http"
 	"strconv"
@@ -79,6 +80,18 @@ func (p *Products) MiddlewareProductValidation(next http.Handler) http.Handler {
 			return
 		}
 
+		// validate the product
+		err = prod.Validate()
+		if err != nil {
+			p.l.Println("[ERROR] validating product", err)
+			http.Error(
+				rw,
+				fmt.Sprintf("Unable to validate json: %s", err),
+				http.StatusBadRequest)
+			return
+		}
+
+		// add the product to the context
 		ctx := context.WithValue(r.Context(), KeyProduct{}, prod)
 		r = r.WithContext(ctx)
 
