@@ -1,11 +1,45 @@
 basePath: /
 consumes:
 - application/json
+definitions:
+  Product:
+    description: Product defines the structure for an API product
+    properties:
+      description:
+        type: string
+        x-go-name: Description
+      id:
+        format: int64
+        type: integer
+        x-go-name: ID
+      name:
+        type: string
+        x-go-name: Name
+      price:
+        format: float
+        type: number
+        x-go-name: Price
+      sku:
+        type: string
+        x-go-name: SKU
+    type: object
+    x-go-package: building-microservices-with-go/data
 info:
   description: Documentation for Product API
   title: of Product API
   version: 1.0.0
 paths:
+  /products:
+    get:
+      description: Return a list of products from the database
+      operationId: listAll
+      responses:
+        "200":
+          $ref: '#/responses/productResponse'
+        "404":
+          $ref: '#/responses/errorResponse'
+      tags:
+      - products
   /products/{id}:
     get:
       description: Return a list of products from the database
@@ -19,6 +53,13 @@ paths:
       - products
 produces:
 - application/json
+responses:
+  productsResponse:
+    description: A list of products returns in the response
+    schema:
+      items:
+        $ref: '#/definitions/Product'
+      type: array
 schemes:
 - http
 swagger: "2.0"

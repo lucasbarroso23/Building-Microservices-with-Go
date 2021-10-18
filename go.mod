@@ -3,6 +3,7 @@ module building-microservices-with-go
 go 1.16
 
 require (
+	github.com/go-openapi/runtime v0.20.0 // indirect
 	github.com/go-playground/validator v9.31.0+incompatible
 	github.com/go-playground/validator/v10 v10.9.0 // indirect
 	github.com/go-swagger/go-swagger v0.28.0 // indirect

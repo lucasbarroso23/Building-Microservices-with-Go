@@ -27,6 +27,15 @@ import (
 
 type KeyProduct struct{}
 
+// A list of products returns in the response
+// swagger:response productsResponse
+type productsResponse struct {
+	// all products in the system
+	// in: body
+	Body []data.Product
+}
+
+// Products is a http.handler
 type Products struct {
 	l *log.Logger
 	v *data.Validation

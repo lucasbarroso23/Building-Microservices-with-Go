@@ -5,6 +5,13 @@ import (
 	"net/http"
 )
 
+// swagger:route GET /products products listAll
+// Return a list of products from the database
+// responses:
+//	200: productResponse
+//	404: errorResponse
+
+// ListAll handles GET requests
 func (p *Products) ListAll(rw http.ResponseWriter, r *http.Request) {
 	p.l.Println("[DEBUG] get all records")
 
