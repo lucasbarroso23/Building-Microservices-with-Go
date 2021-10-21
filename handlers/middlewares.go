@@ -1,9 +1,10 @@
 package handlers
 
 import (
-	"building-microservices-with-go/data"
 	"context"
 	"net/http"
+
+	"github.com/lucasbarroso23/building-microservices-with-go/data"
 )
 
 func (p *Products) MiddlewareValidateProduct(next http.Handler) http.Handler {

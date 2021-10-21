@@ -1,8 +1,9 @@
 package handlers
 
 import (
-	"building-microservices-with-go/data"
 	"net/http"
+
+	"github.com/lucasbarroso23/building-microservices-with-go/data"
 )
 
 func (p *Products) AddProduct(rw http.ResponseWriter, r *http.Request) {

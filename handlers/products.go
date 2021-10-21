@@ -20,7 +20,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"building-microservices-with-go/data"
+	"github.com/lucasbarroso23/building-microservices-with-go/data"
 
 	"github.com/gorilla/mux"
 )

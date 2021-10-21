@@ -1,8 +1,9 @@
 package handlers
 
 import (
-	"building-microservices-with-go/data"
 	"net/http"
+
+	"github.com/lucasbarroso23/building-microservices-with-go/data"
 )
 
 // swagger:route GET /products products listAll

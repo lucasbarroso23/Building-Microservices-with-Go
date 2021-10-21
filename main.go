@@ -1,14 +1,15 @@
 package main
 
 import (
-	"building-microservices-with-go/data"
-	"building-microservices-with-go/handlers"
 	"context"
 	"log"
 	"net/http"
 	"os"
 	"os/signal"
 	"time"
+
+	"github.com/lucasbarroso23/building-microservices-with-go/data"
+	"github.com/lucasbarroso23/building-microservices-with-go/handlers"
 
 	"github.com/go-openapi/runtime/middleware"
 	"github.com/gorilla/mux"
